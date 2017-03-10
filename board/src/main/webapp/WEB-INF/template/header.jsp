@@ -8,6 +8,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous" ></script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<title>spring jpa test</title>
 	<style type="text/css">
@@ -107,12 +108,27 @@
 			<h3 class="text-muted">Spring boot Demo</h3>
 			<nav>
 				<ul class="nav nav-justified">
-					<li class="active"><a href="/">Home</a></li>
-					<li><a href="/alltasks">AllTest</a></li>
-					<li><a href="/newtask">Test Task Manage</a></li>
-					<li><a href="#">Download</a></li>
-					<li><a href="#">About</a></li>
+					<li class="nav-main"><a href="/">Home</a></li>
+					<li class="nav-task"><a href="/alltasks">AllTest</a></li>
+					<li class="nav-manage"><a href="/newtask">Test Task Manage</a></li>
+					<li class="nav-download"><a href="#">Download</a></li>
+					<li class="nav-about"><a href="#">About</a></li>
 				</ul>			
 			</nav>
 		</div>
 	</div>
+	<script>
+		var $nav  = $('.nav');
+		
+		switch (location.pathname) {
+			case "/newtask": case "/updatetask": case "/savetask": case "/deletetask":
+				$nav.children('.nav-manage').addClass('active');						
+				break;
+			case "/alltasks":
+				$nav.children('.nav-task').addClass('active');
+				break;
+			default:
+				$nav.children('.nav-main').addClass('active');
+				break;
+		}
+	</script>

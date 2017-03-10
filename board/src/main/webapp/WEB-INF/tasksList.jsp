@@ -47,7 +47,7 @@
 								<td>${testTask.id }</td>
 								<td>${testTask.password }</td>
 								<td>${testTask.name }</td>
-								<td><fmt:formatDate pattern="dd-MM-yyyy HH:mm:ss" value="${testTask.regdate }"/></td>
+								<td><fmt:formatDate pattern="yyyy-MM-dd" value="${testTask.regdate }"/></td>
 								<td>${testTask.tel }</td>
 								<td class="text-center">
 									<a href="updatetask?seq=${testTask.seq}"><span class="glyphicon glyphicon-pencil"></span></a>&nbsp;
