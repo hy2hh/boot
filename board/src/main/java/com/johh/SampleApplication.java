@@ -2,11 +2,12 @@ package com.johh;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@EnableAutoConfiguration
-public class BoardApplication {
+@SpringBootApplication
+public class SampleApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BoardApplication.class, args);
+		SpringApplication.run(SampleApplication.class, args);
 	}
 }
